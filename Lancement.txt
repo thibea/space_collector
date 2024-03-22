@@ -1,0 +1,29 @@
+#Active env
+venv/Scripts/activate
+
+# start the server
+python -m space_collector.game.server -p 800
+
+#Dans une autre terminal
+# start the viewer
+python -m space_collector.viewer -p 800
+
+#De que carte connecter
+#using serial port
+SERIAL=COM8          # on Windows
+SERIAL=/dev/ttyUSB0  # on Linux
+
+
+
+
+
+/***********************erreur **///////////////
+error: subprocess-exited-with-error
+
+/*Pour affiche les vaiseaux de le depart faudrais lancer ses commande simultanement
+
+1- python -m space_collector.game.server -p 800 /*dans une autre fenetre terminal
+
+2- python -m space_collector.viewer -p 800 /* Puis cela dans une autre terminal
+
+3- python -m space_collector.serial2tcp -p 800 --serial COM..(serie)//Attention une seul connexion serie possible
