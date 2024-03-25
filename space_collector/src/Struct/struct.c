@@ -2,7 +2,8 @@
 #include <string.h>
 #include "StructH/struct.h"
 
-PlaneV TabPlaneV[8]; // Tableau des vaiseau utilise pour envoyer les requet vers terminal serie
+PlaneV TabPlaneV[8];       // Tableau des vaiseau utilise pour envoyer les requet vers terminal serie
+PlanetteP TabPlanette[10]; // Stockage les information sous forme de tableau
 
 // Permet d'afficher les message dans le terminal serie en fonction des commandes
 void afficher(PlaneV *plane)
