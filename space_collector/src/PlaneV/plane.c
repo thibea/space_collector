@@ -1,6 +1,7 @@
 
 #include <string.h>
 #include "Plane/Plane.h"
+#include "StructH/struct.h"
 
 /**********Function permet de deplacer les vaiseau****/
 /**********
@@ -50,16 +51,24 @@ void copierTxt(char *AddVariable, char const *chaine)
     strcpy(AddVariable, chaine);
 }
 
-// Permet de decouper les donnees renvoyer par les radar en ligne, stocke dans une tableau de structure
-void formatageData(char DataServer[], char *recBuffer)
+// Permet de decouper les donnees renvoyer par les radar en ligne, stocke dans une tableau de structure "InfosRadar"
+void decoupeDataRadarLigne(char DataServer[], char *retourLigneInfo)
 {
-    int longData = strlen(DataServer);
     char seperat[] = ",";
-    char *p = strtok(DataServer, seperat);
-    for (int i = 0; i < strlen(p); i++)
+    char *chaineCoupe = strtok(DataServer, seperat);
+    int IncmentNum = 0;
+
+    // Tanque la chineCoupe n'est pas vide, ça boucle
+    while (chaineCoupe != NULL)
     {
-        //*recBuffer = p[i];
-        strcpy(&recBuffer, "MOVE MOC MOC");
-        i++;
+        memcpy(retourLigneInfo, chaineCoupe, strlen(chaineCoupe) + 1); // Copie les chaine de "chaineCoupe" dans le variable "retourLigneInfo"
+        strcpy(TabStockageInfoRadar[IncmentNum].infos, chaineCoupe);
+
+        // printf("*retourLigneInfo : %s \n", retourLigneInfo); // Test pour visualiser l'afiichage de resultat
+        // printf("*chaineCoupe : %s\n", chaineCoupe);          // Test pour visualiser l'afiichage de resultat
+        // printf("increNum :  %d \n", IncmentNum);             // Test pour visualiser l'afiichage de resultat
+
+        IncmentNum++;
+        chaineCoupe = strtok(NULL, seperat);
     }
 }

@@ -209,7 +209,7 @@ void vaiseau1(void *argument)
             /// osDelay(1);
             gets(DataServer);
             signed char *recPlanet[1000];
-            formatageData(DataServer, &recPlanet);
+            decoupeDataRadarLigne(DataServer, &recPlanet);
 
             // osDelay(1);
             puts(*recPlanet);

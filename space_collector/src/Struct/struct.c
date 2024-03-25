@@ -2,8 +2,9 @@
 #include <string.h>
 #include "StructH/struct.h"
 
-PlaneV TabPlaneV[8];       // Tableau des vaiseau utilise pour envoyer les requet vers terminal serie
-PlanetteP TabPlanette[10]; // Stockage les information sous forme de tableau
+PlaneV TabPlaneV[8];                      // Tableau des vaiseau utilise pour envoyer les requet vers terminal serie
+PlanetteP TabPlanette[10];                // Stockage les information de planette sous forme de tableau
+RetourInfoRadar TabStockageInfoRadar[10]; // Stockage tous les information de radar en ligne
 
 // Permet d'afficher les message dans le terminal serie en fonction des commandes
 void afficher(PlaneV *plane)

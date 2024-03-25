@@ -24,7 +24,7 @@ typedef struct Planette
     int saved;
 } PlanetteP;
 
-// Stockage les information sous forme de tableau
+// Stockage les information de planette sous forme de tableau
 extern PlanetteP TabPlanette[10];
 
 // Structure permet de stocker tous les infos de radar en ligne
@@ -33,5 +33,8 @@ typedef struct InfosRadar
     char infos[25];
 
 } RetourInfoRadar;
+
+// Stockage tous les information de radar en ligne
+extern RetourInfoRadar TabStockageInfoRadar[10];
 
 void afficher(PlaneV *plane);
