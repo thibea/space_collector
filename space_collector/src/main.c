@@ -43,7 +43,7 @@ void StartDefaultTask(void *argument)
         gets(DataServer);
         // puts(DataServer);
 
-        /* copierTxt(&p1.cmd, "MOVE");
+         copierTxt(&p1.cmd, "MOVE");
          p1.Id_Plane = 1;
          p1.angle = 40;
          p1.speed = 600;
@@ -80,6 +80,7 @@ void StartDefaultTask(void *argument)
         osDelay(1);
     }
 }
+
 */
 
 #include <math.h>
@@ -89,7 +90,7 @@ void StartDefaultTask(void *argument)
 #include "main.h"
 #include "cmsis_os.h"
 
-//////
+//////rajouter
 #include "Plane/Plane.h"
 #include <string.h>
 
