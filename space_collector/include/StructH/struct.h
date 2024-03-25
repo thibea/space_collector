@@ -3,6 +3,7 @@
 #define MAX_Plane 8
 #define MAX_Planette 10
 #define MAX_RetourRadar 10
+#define MAX_TOKENS 20
 
 // Structure pour les vaiseaux permet d'envoyer les commandevers le serveur
 typedef struct Plane
@@ -40,6 +41,16 @@ typedef struct InfosRadar
 
 // Stockage tous les information de radar en ligne
 extern RetourInfoRadar TabStockageInfoRadar[MAX_RetourRadar];
+
+// Permet de stock tous les donnees decouper dans la fonction ""
+typedef struct DataTocken
+{
+    char token[30];
+
+} DecoupeToken;
+
+// Stockage des data decouper dans la fonction ""
+extern DecoupeToken TabdecpeTok[MAX_TOKENS];
 
 void afficher(PlaneV *plane);                           // Permet d'envoyer les commande vers les serveur via terminal serie
 void affichageInfoStructure(RetourInfoRadar *ReadInfo); // Permet d'afficher tous les information stocke dans structre "InfosRadar"
