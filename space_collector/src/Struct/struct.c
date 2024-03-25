@@ -2,9 +2,9 @@
 #include <string.h>
 #include "StructH/struct.h"
 
-PlaneV TabPlaneV[8];                      // Tableau des vaiseau utilise pour envoyer les requet vers terminal serie
-PlanetteP TabPlanette[10];                // Stockage les information de planette sous forme de tableau
-RetourInfoRadar TabStockageInfoRadar[10]; // Stockage tous les information de radar en ligne
+PlaneV TabPlaneV[MAX_Plane];                           // Tableau des vaiseau utilise pour envoyer les requet vers terminal serie
+PlanetteP TabPlanette[MAX_Planette];                   // Stockage les information de planette sous forme de tableau
+RetourInfoRadar TabStockageInfoRadar[MAX_RetourRadar]; // Stockage tous les information de radar en ligne
 
 // Permet d'afficher les message dans le terminal serie en fonction des commandes
 void afficher(PlaneV *plane)
@@ -24,4 +24,13 @@ void afficher(PlaneV *plane)
     }
 
     puts(CMD);
+}
+
+// Permet d'afficher tous les information stocke dans structre "InfosRadar" pour un test visuel
+void affichageInfoStructure(RetourInfoRadar *ReadInfo)
+{
+    for (int i = 0; i < MAX_RetourRadar; i++)
+    {
+        printf("Infos radar stocke [%d] : %s\n", i, ReadInfo[i].infos);
+    }
 }
