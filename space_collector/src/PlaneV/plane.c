@@ -45,6 +45,7 @@
     puts(movecmd);
 }*/
 
+/***********Les extense de struc*************/
 PlaneV p1;
 PlaneV p2;
 PlaneV p3;
@@ -54,6 +55,12 @@ PlaneV p6;
 PlaneV p7;
 PlaneV p8;
 PlaneV p9;
+
+/*extern PlanetteP pp0;
+extern PlanetteP pp1;
+extern PlanetteP pp2;
+extern PlanetteP pp4;*/
+/*******************fin des extense de struc*******/
 
 void afficher(PlaneV *plane)
 {
@@ -79,17 +86,20 @@ void copierTxt(char *AddVariable, char const *chaine)
     strcpy(AddVariable, chaine);
 }
 
-/*void formatageData(char DataServer[])
+void formatageData(char DataServer[], char *recBuffer)
 {
     int longData = strlen(DataServer);
     char seperat[] = ",";
     char *p = strtok(DataServer, seperat);
-    /*for (int i = 0; i < longData)
+    for (int i = 0; i < strlen(p); i++)
     {
-
+        //*recBuffer = p[i];
+        strcpy(&recBuffer, "MOVE MOC MOC");
+        i++;
     }
-}*/
+}
 
+/**
 void parse_enemy_info(char *str, Enemi *e)
 {
     char *token;
@@ -98,7 +108,7 @@ void parse_enemy_info(char *str, Enemi *e)
     token = strtok(str, ",");
     if (token == NULL)
     {
-        fprintf(str, "Erreur: Impossible de récupérer la position X\n");
+        // fprintf(str, "Erreur: Impossible de récupérer la position X\n");
         return;
     }
     e->position_x = atoi(token);
@@ -106,7 +116,7 @@ void parse_enemy_info(char *str, Enemi *e)
     token = strtok(NULL, " ");
     if (token == NULL)
     {
-        fprintf(stderr, "Erreur: Impossible de récupérer la position Y\n");
+        // fprintf(stderr, "Erreur: Impossible de récupérer la position Y\n");
         return;
     }
     e->position_y = atoi(token);
@@ -114,7 +124,7 @@ void parse_enemy_info(char *str, Enemi *e)
     token = strtok(NULL, " ");
     if (token == NULL)
     {
-        fprintf(stderr, "Erreur: Impossible de récupérer la santé\n");
+        // fprintf(stderr, "Erreur: Impossible de récupérer la santé\n");
         return;
     }
     e->health = atoi(token);
@@ -122,11 +132,11 @@ void parse_enemy_info(char *str, Enemi *e)
     token = strtok(NULL, " ");
     if (token == NULL)
     {
-        fprintf(stderr, "Erreur: Impossible de récupérer le dégât\n");
+        // fprintf(stderr, "Erreur: Impossible de récupérer le dégât\n");
         return;
     }
     e->damage = atoi(token);
-}
+}*/
 
 /*
 void parse_enemy_info(char *str, Enemi *e) {

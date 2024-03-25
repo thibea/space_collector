@@ -203,18 +203,17 @@ void vaiseau1(void *argument)
             p6.Id_Plane = 6;
             afficher(&p6);
 
-            if ((strcmp(DataServer, "OK")) == 0)
-            {
-            }
+            /// osDelay(1);
+            gets(DataServer);
+            signed char *recPlanet[1000];
+            formatageData(DataServer, &recPlanet);
+
+            // osDelay(1);
+            puts(*recPlanet);
         }
 
         break;
     }
 
-    /*static uint32_t lastTimeMqtt = 0;
-    if (millis() - lastTimeMqtt >= 10000)
-    {
-        lastTimeMqtt = millis();
-    }*/
     osThreadExit();
 }
