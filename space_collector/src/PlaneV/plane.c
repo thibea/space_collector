@@ -1,6 +1,5 @@
 
 #include <string.h>
-
 #include "Plane/Plane.h"
 
 /**********Function permet de deplacer les vaiseau****/
@@ -45,47 +44,13 @@
     puts(movecmd);
 }*/
 
-/***********Les extense de struc*************/
-PlaneV p1;
-PlaneV p2;
-PlaneV p3;
-PlaneV p4;
-PlaneV p5;
-PlaneV p6;
-PlaneV p7;
-PlaneV p8;
-PlaneV p9;
-
-/*extern PlanetteP pp0;
-extern PlanetteP pp1;
-extern PlanetteP pp2;
-extern PlanetteP pp4;*/
-/*******************fin des extense de struc*******/
-
-void afficher(PlaneV *plane)
-{
-    char CMD[16];
-    if ((strcmp(plane->cmd, "RADAR")) == 0)
-    {
-        snprintf(CMD, sizeof(CMD), "%s %d ", plane->cmd, plane->Id_Plane);
-    }
-    else if ((strcmp(plane->cmd, "FIRE")) == 0)
-    {
-        snprintf(CMD, sizeof(CMD), "%s %d %d", plane->cmd, plane->Id_Plane, plane->angle);
-    }
-    else
-    {
-        snprintf(CMD, sizeof(CMD), "%s %d %d %d", plane->cmd, plane->Id_Plane, plane->angle, plane->speed);
-    }
-
-    puts(CMD);
-}
-
+// Permet de copier les chaine dans une autre variable
 void copierTxt(char *AddVariable, char const *chaine)
 {
     strcpy(AddVariable, chaine);
 }
 
+// Permet de decouper les donnees renvoyer par les radar en ligne, stocke dans une tableau de structure
 void formatageData(char DataServer[], char *recBuffer)
 {
     int longData = strlen(DataServer);
@@ -98,85 +63,3 @@ void formatageData(char DataServer[], char *recBuffer)
         i++;
     }
 }
-
-/**
-void parse_enemy_info(char *str, Enemi *e)
-{
-    char *token;
-
-    // Utilisation de strtok pour découper la chaîne en tokens
-    token = strtok(str, ",");
-    if (token == NULL)
-    {
-        // fprintf(str, "Erreur: Impossible de récupérer la position X\n");
-        return;
-    }
-    e->position_x = atoi(token);
-
-    token = strtok(NULL, " ");
-    if (token == NULL)
-    {
-        // fprintf(stderr, "Erreur: Impossible de récupérer la position Y\n");
-        return;
-    }
-    e->position_y = atoi(token);
-
-    token = strtok(NULL, " ");
-    if (token == NULL)
-    {
-        // fprintf(stderr, "Erreur: Impossible de récupérer la santé\n");
-        return;
-    }
-    e->health = atoi(token);
-
-    token = strtok(NULL, " ");
-    if (token == NULL)
-    {
-        // fprintf(stderr, "Erreur: Impossible de récupérer le dégât\n");
-        return;
-    }
-    e->damage = atoi(token);
-}*/
-
-/*
-void parse_enemy_info(char *str, Enemi *e) {
-    char *token;
-
-    // Utilisation de strtok pour découper la chaîne en tokens
-    token = strtok(str, " ");
-    if (token == NULL) {
-        fprintf(stderr, "Erreur: Impossible de récupérer la position X\n");
-        return;
-    }
-    e->position_x = atoi(token);
-
-    token = strtok(NULL, " ");
-    if (token == NULL) {
-        fprintf(stderr, "Erreur: Impossible de récupérer la position Y\n");
-        return;
-    }
-    e->position_y = atoi(token);
-
-    token = strtok(NULL, " ");
-    if (token == NULL) {
-        //fprintf(stderr, "Erreur: Impossible de récupérer la santé\n");
-        return;
-    }
-    e->health = atoi(token);
-
-    token = strtok(NULL, " ");
-    if (token == NULL) {
-        //fprintf(stderr, "Erreur: Impossible de récupérer le dégât\n");
-        return;
-    }
-    e->damage = atoi(token);
-}
-void movePlane(PlaneV *plane) {
-    char movecmd[16];
-    snprintf(movecmd, sizeof(movecmd), "MOVE %c %d %d  ", itoa(plane->Id_Plane, 1, 10), itoa(plane->angle,90 , 10), itoa(plane->speed,900 , 10));
-    puts(movecmd);
-}
-Id_Plane;
-    int angle;
-    int speed;
-    */
