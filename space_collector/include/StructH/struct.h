@@ -42,7 +42,7 @@ typedef struct InfosRadar
 // Stockage tous les information de radar en ligne
 extern RetourInfoRadar TabStockageInfoRadar[MAX_RetourRadar];
 
-// Permet de stock tous les donnees decouper dans la fonction ""
+// Permet de stock tous les donnees decouper dans la fonction "decoupeInfosRadar"
 typedef struct DataTocken
 {
     char token[30];
@@ -50,7 +50,7 @@ typedef struct DataTocken
 } DecoupeToken;
 
 // Stockage des data decouper dans la fonction ""
-extern DecoupeToken TabdecpeTok[MAX_TOKENS];
+extern DecoupeToken TabDecoupeToken[MAX_TOKENS];
 
 void afficher(PlaneV *plane);                           // Permet d'envoyer les commande vers les serveur via terminal serie
 void affichageInfoStructure(RetourInfoRadar *ReadInfo); // Permet d'afficher tous les information stocke dans structre "InfosRadar"

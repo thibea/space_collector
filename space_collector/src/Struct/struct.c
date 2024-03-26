@@ -5,7 +5,7 @@
 PlaneV TabPlaneV[MAX_Plane];                           // Tableau des vaiseau utilise pour envoyer les requet vers terminal serie
 PlanetteP TabPlanette[MAX_Planette];                   // Stockage les information de planette sous forme de tableau
 RetourInfoRadar TabStockageInfoRadar[MAX_RetourRadar]; // Stockage tous les information de radar en ligne
-DecoupeToken TabdecpeTok[MAX_TOKENS];                  // Stockage des data decouper dans la fonction ""
+DecoupeToken TabDecoupeToken[MAX_TOKENS];              // Stockage des data decouper dans la fonction "decoupeInfosRadar"
 
 // Permet d'afficher les message dans le terminal serie en fonction des commandes
 void afficher(PlaneV *plane)

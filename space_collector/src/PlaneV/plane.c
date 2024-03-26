@@ -72,3 +72,36 @@ void decoupeDataRadarLigne(char DataServer[], char *retourLigneInfo)
         chaineCoupe = strtok(NULL, seperat);
     }
 }
+
+// Permet de decouper les chaine pour les stocker dans struct DataTocken
+void decoupeInfosRadar(char *delimiter, char *Lettre)
+{
+    int count = 0;
+
+    for (int a = 0; a < MAX_RetourRadar; a++)
+    {
+        if (strchr(TabStockageInfoRadar[a].infos, Lettre) != NULL)
+        {
+            // Découper la chaîne en tokens
+            char *ChaineToken = strtok(TabStockageInfoRadar[a].infos, delimiter);
+
+            // Stocker chaque token dans le tableau de structures
+            while (ChaineToken != NULL)
+            {
+                strcpy(TabDecoupeToken[count].token, ChaineToken);
+                ChaineToken = strtok(NULL, delimiter);
+                count++;
+            }
+        }
+    }
+}
+
+// Afficher les information stockés dans le tableau de structures DataTocken
+void afficheInfoDataTocken()
+{
+    printf("\n");
+    for (int i = 0; i < MAX_TOKENS; i++)
+    {
+        printf("Tokens stockés[%d] : %s\n", i, TabDecoupeToken[i].token);
+    }
+}

@@ -4,3 +4,5 @@
 
 void copierTxt(char *AddVariable, char const *chaine);                // Permet d'effectuer des copie des chaine
 void decoupeDataRadarLigne(char DataServer[], char *retourLigneInfo); // Permet de decouper les donnees renvoyer par les radar en ligne,
+void decoupeInfosRadar(char *delimiter, char *Lettre);                // Permet de decouper les chaine pour les stocker dans struct DataTocken
+void afficheInfoDataTocken();                                         // Afficher les information stockés dans le tableau de structures DataTocken
