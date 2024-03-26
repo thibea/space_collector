@@ -96,16 +96,6 @@ void decoupeInfosRadar(char *delimiter, char *Lettre)
     }
 }
 
-// Afficher les information stockés dans le tableau de structures DataTocken
-void afficheInfoDataTocken()
-{
-    printf("\n");
-    for (int i = 0; i < MAX_TOKENS; i++)
-    {
-        printf("Tokens stockés[%d] : %s\n", i, TabDecoupeToken[i].token);
-    }
-}
-
 // Permet de placer les information de planette stock dans le structure DataTocken
 void coordonneePlanetteRecu()
 {
@@ -130,5 +120,112 @@ void coordonneePlanetteRecu()
         TabPlanette[j].saved = atoi(TabDecoupeToken[i].token);
 
         i = i + 1;
+    }
+}
+
+// Permet de suivre l'evolution nos vaiseau, savoir ou ils sont, recuperer les data stocker dans "TabDecoupeToken" pour stocker dans "PostionPlane"
+void coordonneePositionPlaneRecu()
+{
+    int i = 0;
+    for (int j = 0; j < MAX_Plane; j++)
+    {
+        strcpy(TabPosPlane[j].Name, TabDecoupeToken[i].token);
+
+        i = i + 1;
+        TabPosPlane[j].Team = atoi(TabDecoupeToken[i].token);
+
+        i = i + 1;
+        TabPosPlane[j].Id_Plane = atoi(TabDecoupeToken[i].token);
+
+        i = i + 1;
+        TabPosPlane[j].PosX = atoi(TabDecoupeToken[i].token);
+
+        i = i + 1;
+        TabPosPlane[j].PosY = atoi(TabDecoupeToken[i].token);
+
+        i = i + 1;
+        TabPosPlane[j].Broken = atoi(TabDecoupeToken[i].token);
+
+        i = i + 1;
+    }
+}
+
+// Permet de stocker les coordonnee de notre base
+void coordonneePosBase()
+{
+    int i = 0;
+    for (int j = 0; j < MAX_Plane; j++)
+    {
+        strcpy(TabBasePlane[j].Name, TabDecoupeToken[i].token);
+
+        i = i + 1;
+        TabBasePlane[j].PosX = atoi(TabDecoupeToken[i].token);
+
+        i = i + 1;
+        TabBasePlane[j].PosY = atoi(TabDecoupeToken[i].token);
+
+        i = i + 1;
+    }
+}
+
+// Afficher les information stockés dans le tableau de structures DataTocken, test pour le visuel
+void afficheInfoDataTocken()
+{
+    printf("\n");
+    for (int i = 0; i < MAX_TOKENS; i++)
+    {
+        printf("Tokens stockés[%d] : %s\n", i, TabDecoupeToken[i].token);
+    }
+}
+
+// Afficher les information stockés dans le tableau de structures "TabPlanette", test pour le visuel
+void afficheTabPosPlane()
+{
+    printf("\n");
+    for (int i = 0; i < MAX_Plane; i++)
+    {
+        printf("TabPosPlane [%d].Name : %s\n", i, TabPosPlane[i].Name);
+        printf("TabPosPlane [%d].Team : %s\n", i, TabPosPlane[i].Team);
+        printf("TabPosPlane [%d].Id_Plane : %s\n", i, TabPosPlane[i].Id_Plane);
+        printf("TabPosPlane [%d].PosX : %s\n", i, TabPosPlane[i].PosX);
+        printf("TabPosPlane [%d].PosY : %s\n", i, TabPosPlane[i].PosY);
+        printf("TabPosPlane [%d].Broken : %s\n\n", i, TabPosPlane[i].Broken);
+    }
+}
+
+// Afficher les information stockés dans le tableau de structures "TabStockageInfoRadar", test pour le visuel
+void afficheTabStockageInfoRadar()
+{
+    printf("\n");
+    for (int i = 0; i < MAX_RetourRadar; i++)
+    {
+        printf("TabStockageInfoRadar [%d].infos : %s\n", i, TabStockageInfoRadar[i].infos);
+    }
+}
+
+// Afficher les information stockés dans le tableau de structures "TabPlanette", test pour le visuel
+void afficheTabPlanette()
+{
+    printf("\n");
+    for (int i = 0; i < MAX_Planette; i++)
+    {
+        printf("TabPlanette [%d].p : %s\n", i, TabPlanette[i].p);
+        printf("TabPlanette [%d].Id_Planette : %s\n", i, TabPlanette[i].Id_Planette);
+        printf("TabPlanette [%d].posX : %s\n", i, TabPlanette[i].posX);
+        printf("TabPlanette [%d].posY : %s\n", i, TabPlanette[i].posY);
+        printf("TabPlanette [%d].Id_Ship : %s\n", i, TabPlanette[i].Id_Ship);
+        printf("TabPlanette [%d].saved : %s\n\n", i, TabPlanette[i].saved);
+    }
+}
+
+// Afficher les information stockés dans le tableau de structures "TabBasePlane", test pour le visuel
+void afficheTabBasePlane()
+{
+    printf("\n");
+    for (int i = 0; i < MAX_Base; i++)
+    {
+        printf("TabBasePlane [%d].Name : %s\n", i, TabBasePlane[i].Name);
+        printf("TabBasePlane [%d].PosX : %s\n", i, TabBasePlane[i].PosX);
+        printf("TabBasePlane [%d].PosY : %s\n", i, TabBasePlane[i].PosY);
     }
 }

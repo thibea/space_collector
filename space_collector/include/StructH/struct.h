@@ -4,6 +4,7 @@
 #define MAX_Planette 10
 #define MAX_RetourRadar 10
 #define MAX_TOKENS 20
+#define MAX_Base 2
 
 // Structure pour les vaiseaux permet d'envoyer les commandevers le serveur
 typedef struct Plane
@@ -51,6 +52,33 @@ typedef struct DataTocken
 
 // Stockage des data decouper dans la fonction ""
 extern DecoupeToken TabDecoupeToken[MAX_TOKENS];
+
+// Structure permet de voir les position de nos vaiseau(Plane)
+typedef struct PostionPlane
+{
+    char Name[2];
+    int Team;
+    int Id_Plane;
+    int PosX;
+    int PosY;
+    int Broken;
+
+} PosPlane;
+
+// Mise a jour des coordonne des planes
+extern PosPlane TabPosPlane[MAX_Plane];
+
+// Structure permet de voir ou se situe notre base
+typedef struct Base
+{
+    char Name[2];
+    int PosX;
+    int PosY;
+
+} BasePlane;
+
+// Stockage des coordonne de notre base
+extern BasePlane TabBasePlane[MAX_Base];
 
 void afficher(PlaneV *plane);                           // Permet d'envoyer les commande vers les serveur via terminal serie
 void affichageInfoStructure(RetourInfoRadar *ReadInfo); // Permet d'afficher tous les information stocke dans structre "InfosRadar"
