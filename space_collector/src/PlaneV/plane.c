@@ -105,3 +105,30 @@ void afficheInfoDataTocken()
         printf("Tokens stockés[%d] : %s\n", i, TabDecoupeToken[i].token);
     }
 }
+
+// Permet de placer les information de planette stock dans le structure DataTocken
+void coordonneePlanetteRecu()
+{
+    int i = 0;
+    for (int j = 0; j < MAX_Plane; j++)
+    {
+        strcpy(TabPlanette[j].p, TabDecoupeToken[i].token);
+
+        i = i + 1;
+        TabPlanette[j].Id_Planette = atoi(TabDecoupeToken[i].token);
+
+        i = i + 1;
+        TabPlanette[j].posX = atoi(TabDecoupeToken[i].token);
+
+        i = i + 1;
+        TabPlanette[j].posY = atoi(TabDecoupeToken[i].token);
+
+        i = i + 1;
+        TabPlanette[j].Id_Ship = atoi(TabDecoupeToken[i].token);
+
+        i = i + 1;
+        TabPlanette[j].saved = atoi(TabDecoupeToken[i].token);
+
+        i = i + 1;
+    }
+}
